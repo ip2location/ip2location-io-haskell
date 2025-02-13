@@ -163,7 +163,7 @@ Lookup domain WHOIS information.
 |nameservers|array|Name servers|
 ```
 
-```{py:function} getdomainname(Url)
+```{py:function} getDomainName(Url)
 Get domain name from a URL.
 
 :param string Url: (Required) The URL that you want to extract domain name from.
@@ -171,7 +171,7 @@ Get domain name from a URL.
 :rtype: String
 ```
 
-```{py:function} getdomainextension(Str)
+```{py:function} getDomainExtension(Str)
 Get domain extension from a URL or domain.
 
 :param string Str: (Required) The URL or domain.
