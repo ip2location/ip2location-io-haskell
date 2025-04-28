@@ -9,8 +9,8 @@ project = 'IP2Location.io Haskell SDK'
 copyright = '2025, IP2Location'
 author = 'IP2Location'
 
-release = '1.0.0'
-version = '1.0.0'
+release = '1.1.0'
+version = '1.1.0'
 
 # -- General configuration
 
@@ -46,7 +46,7 @@ myst_enable_extensions = [
 # https://myst-parser.readthedocs.io/en/latest/configuration.html#setting-html-metadata
 myst_html_meta = {
     "description": "IP2Location.io Haskell module allows user to query for an enriched data set based on IP address and provides WHOIS lookup api that helps users to obtain domain information.",
-    "keywords": "IP2Location, Geolocation, IP location, Haskell, WHOIS, domain",
+    "keywords": "IP2Location, Geolocation, IP location, Haskell, WHOIS, domain, hosted domains",
     "google-site-verification": "DeW6mXDyMnMt4i61ZJBNuoADPimo5266DKob7Z7d6i4",
 }
 

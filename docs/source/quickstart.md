@@ -257,3 +257,30 @@ main = do
     let domainExtension = DW.getDomainExtension "example.com"
     putStrLn $ "domainExtension: " ++ domainExtension
 ```
+
+### Lookup IP Address Hosted Domains Data
+
+You can lookup hosted domains information as below:
+
+```haskell
+import Configuration
+import qualified HostedDomain as HD
+
+main :: IO ()
+main = do
+    let apikey = "YOUR_API_KEY"
+    let ipadd = "8.8.8.8"
+    let page = 1
+    config <- open apikey
+    result <- HD.lookUpHosted config ipadd page
+
+    case result of
+        HD.HostedError err -> putStrLn $ "ERROR: " ++ HD.error_message (HD.error err)
+        HD.HostedResponse response -> do
+            putStrLn $ "ip: " ++ HD.ip response
+            putStrLn $ "total_domains: " ++ (show) (HD.total_domains response)
+            putStrLn $ "page: " ++ (show) (HD.page response)
+            putStrLn $ "per_page: " ++ (show) (HD.per_page response)
+            putStrLn $ "total_pages: " ++ (show) (HD.total_pages response)
+            putStrLn $ "domains: " ++ (show) (HD.domains response)
+```

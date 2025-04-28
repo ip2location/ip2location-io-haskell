@@ -178,3 +178,23 @@ Get domain extension from a URL or domain.
 :return: Returns the domain extension in text.
 :rtype: String
 ```
+
+```{py:function} lookUpHosted(Config, IPAddress, Page)
+Retrieve hosted domains information for an IP address.
+
+:param Configuration Config: (Required) The config object.
+:param String IPAddress: (Required) The IP address (IPv4 or IPv6).
+:param Int Page: The page of the result.
+:return: Returns the hosted domains information in JSON. Refer below table for the fields avaliable in the JSON
+:rtype: json
+
+**RETURN FIELDS**
+| Parameter | Type | Description |
+|---|---|---|
+|IP|string|IP address.|
+|TotalDomains|integer|Total number of hosted domains found.|
+|Page|integer|Current lookup page.|
+|PerPage|integer|Number of domains displayed in the page.|
+|TotalPages|integer|Total pages of the hosted domains.|
+|Domains|array|Hosted domains of the lookup IP Address.|
+```
