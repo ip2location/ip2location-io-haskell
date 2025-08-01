@@ -87,6 +87,9 @@ data TimeZoneInfo = TimeZoneInfo {
     current_time :: String,
     gmt_offset :: Int,
     is_dst :: Bool,
+    abbreviation :: String,
+    dst_start_date :: String,
+    dst_end_date :: String,
     sunrise :: String,
     sunset :: String
 } deriving (Show, Generic)
