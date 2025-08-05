@@ -115,7 +115,9 @@ data ProxyObj = ProxyObj {
     is_consumer_privacy_network :: Bool,
     is_enterprise_private_network :: Bool,
     is_spammer :: Bool,
-    is_scanner :: Bool,is_botnet :: Bool
+    is_scanner :: Bool,
+    is_botnet :: Bool,
+    is_bogon :: Bool
 } deriving (Show, Generic)
 
 -- | Main response type

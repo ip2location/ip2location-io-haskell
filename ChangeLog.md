@@ -1,5 +1,9 @@
 # Revision history for ip2location.io
 
+## 1.3.0  -- 2025-08-05
+
+* Added support for is_bogon field.
+
 ## 1.2.0  -- 2025-08-01
 
 * Added support for abbreviation, dst_start_date and dst_end_date fields.
