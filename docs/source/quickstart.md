@@ -148,6 +148,8 @@ main = do
                     putStrLn $ "proxy => is_enterprise_private_network: " ++ show (IPG.is_enterprise_private_network prx)
                     putStrLn $ "proxy => is_spammer: " ++ show (IPG.is_spammer prx)
                     putStrLn $ "proxy => is_scanner: " ++ show (IPG.is_scanner prx)
+                    putStrLn $ "proxy => is_botnet: " ++ show (IPG.is_botnet prx)
+                    putStrLn $ "proxy => is_bogon: " ++ show (IPG.is_bogon prx)
 ```
 
 ### Lookup Domain Information
