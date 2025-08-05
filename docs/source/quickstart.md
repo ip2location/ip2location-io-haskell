@@ -121,6 +121,9 @@ main = do
                     putStrLn $ "time_zone_info => current_time: " ++ IPG.current_time tzi
                     putStrLn $ "time_zone_info => gmt_offset: " ++ show (IPG.gmt_offset tzi)
                     putStrLn $ "time_zone_info => is_dst: " ++ show (IPG.is_dst tzi)
+                    putStrLn $ "time_zone_info => abbreviation: " ++ IPG.abbreviation tzi
+                    putStrLn $ "time_zone_info => dst_start_date: " ++ IPG.dst_start_date tzi
+                    putStrLn $ "time_zone_info => dst_end_date: " ++ IPG.dst_end_date tzi
                     putStrLn $ "time_zone_info => sunrise: " ++ IPG.sunrise tzi
                     putStrLn $ "time_zone_info => sunset: " ++ IPG.sunset tzi
             case IPG.geotargeting response of
