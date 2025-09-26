@@ -11,7 +11,7 @@ This module allows users to query an IP address to get geolocation & proxy info.
 
 IP2Location.io API subscription at https://www.ip2location.io
 -}
-module IPGeolocation (IPResult(..), ResponseObj(..), ErrorObj(..), ErrorInfo(..), Continent(..), Translation(..), Country(..), Currency(..), Language(..), Region(..), City(..), TimeZoneInfo(..), GeoTargeting(..), ProxyObj(..), lookUpIP) where
+module IPGeolocation (IPResult(..), ResponseObj(..), ErrorObj(..), ErrorInfo(..), ASInfo(..),  Continent(..), Translation(..), Country(..), Currency(..), Language(..), Region(..), City(..), TimeZoneInfo(..), GeoTargeting(..), ProxyObj(..), lookUpIP) where
 
 import Control.Exception
 import System.Exit
@@ -24,6 +24,15 @@ import Network.URI.Encode as URIE
 import Configuration
 import GHC.Generics (Generic)
 import Control.Applicative ((<|>))
+
+-- | AS info
+data ASInfo = ASInfo {
+    as_number :: String,
+    as_name :: String,
+    as_domain :: String,
+    as_usage_type :: String,
+    as_cidr :: String
+} deriving (Show, Generic)
 
 -- | Translation
 data Translation = Translation {
@@ -133,6 +142,7 @@ data ResponseObj = ResponseObj {
     time_zone :: String,
     asn :: String,
     as :: String,
+    as_info :: Maybe ASInfo,
     isp :: Maybe String,
     domain :: Maybe String,
     net_speed :: Maybe String,
@@ -178,6 +188,7 @@ data IPResult
     deriving (Show, Generic)
 
 -- Derive FromJSON instances
+instance FromJSON ASInfo
 instance FromJSON Translation
 instance FromJSON Continent
 instance FromJSON Currency

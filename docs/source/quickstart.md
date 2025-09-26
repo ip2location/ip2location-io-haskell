@@ -21,6 +21,7 @@ You can make a geolocation data lookup for an IP address as below:
 ```haskell
 import Configuration
 import qualified IPGeolocation as IPG
+import qualified IPGeolocation as IPAS (ASInfo(..))
 import qualified IPGeolocation as IPConti (Continent(..))
 import qualified IPGeolocation as IPCntry (Country(..))
 import qualified IPGeolocation as IPCurr (Currency(..))
@@ -50,6 +51,14 @@ main = do
             putStrLn $ "time_zone: " ++ IPG.time_zone response
             putStrLn $ "asn: " ++ IPG.asn response
             putStrLn $ "as: " ++ IPG.as response
+            case IPG.as_info response of
+                Nothing -> pure ()
+                Just asi -> do
+                    putStrLn $ "as_info => as_number: " ++ IPAS.as_number asi
+                    putStrLn $ "as_info => as_name: " ++ IPAS.as_name asi
+                    putStrLn $ "as_info => as_domain: " ++ IPAS.as_domain asi
+                    putStrLn $ "as_info => as_usage_type: " ++ IPAS.as_usage_type asi
+                    putStrLn $ "as_info => as_cidr: " ++ IPAS.as_cidr asi
             putStrLn $ "isp: " ++ maybe "NOT_SUPPORTED" id (IPG.isp response)
             putStrLn $ "domain: " ++ maybe "NOT_SUPPORTED" id (IPG.domain response)
             putStrLn $ "net_speed: " ++ maybe "NOT_SUPPORTED" id (IPG.net_speed response)

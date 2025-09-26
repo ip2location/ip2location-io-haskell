@@ -1,5 +1,10 @@
 # Revision history for ip2location.io
 
+## 1.4.0  -- 2025-09-26
+
+* Added support for as_info section.
+
+
 ## 1.3.0  -- 2025-08-05
 
 * Added support for is_bogon field.
