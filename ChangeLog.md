@@ -1,5 +1,9 @@
 # Revision history for ip2location.io
 
+## 1.5.0  -- 2026-04-27
+
+* Added support for is_ai_crawler field.
+
 ## 1.4.0  -- 2025-09-26
 
 * Added support for as_info section.

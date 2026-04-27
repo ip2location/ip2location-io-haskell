@@ -152,6 +152,7 @@ main = do
                     putStrLn $ "proxy => is_public_proxy: " ++ show (IPG.is_public_proxy prx)
                     putStrLn $ "proxy => is_web_proxy: " ++ show (IPG.is_web_proxy prx)
                     putStrLn $ "proxy => is_web_crawler: " ++ show (IPG.is_web_crawler prx)
+                    putStrLn $ "proxy => is_ai_crawler: " ++ show (IPG.is_ai_crawler prx)
                     putStrLn $ "proxy => is_residential_proxy: " ++ show (IPG.is_residential_proxy prx)
                     putStrLn $ "proxy => is_consumer_privacy_network: " ++ show (IPG.is_consumer_privacy_network prx)
                     putStrLn $ "proxy => is_enterprise_private_network: " ++ show (IPG.is_enterprise_private_network prx)

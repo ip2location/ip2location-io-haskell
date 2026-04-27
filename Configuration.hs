@@ -1,7 +1,7 @@
 {-|
 Module      : Configuration
 Description : IP2Location.io Haskell package
-Copyright   : (c) IP2Location, 2025
+Copyright   : (c) IP2Location, 2026
 License     : MIT
 Maintainer  : sales@ip2location.com
 Stability   : experimental
@@ -28,4 +28,4 @@ data Config = Config {
 -}
 open :: String -> IO Config
 open apikey = do
-    return (Config apikey "sdk-haskell-iplio" "1.4.0")
+    return (Config apikey "sdk-haskell-iplio" "1.5.0")

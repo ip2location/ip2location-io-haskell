@@ -2,7 +2,7 @@
 {-|
 Module      : IPGeolocation
 Description : IP2Location.io Haskell package
-Copyright   : (c) IP2Location, 2025
+Copyright   : (c) IP2Location, 2026
 License     : MIT
 Maintainer  : sales@ip2location.com
 Stability   : experimental
@@ -120,6 +120,7 @@ data ProxyObj = ProxyObj {
     is_public_proxy :: Bool,
     is_web_proxy :: Bool,
     is_web_crawler :: Bool,
+    is_ai_crawler :: Bool,
     is_residential_proxy :: Bool,
     is_consumer_privacy_network :: Bool,
     is_enterprise_private_network :: Bool,

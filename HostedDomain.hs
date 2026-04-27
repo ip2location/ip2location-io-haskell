@@ -2,7 +2,7 @@
 {-|
 Module      : HostedDomain
 Description : IP2Location.io Haskell package
-Copyright   : (c) IP2Location, 2025
+Copyright   : (c) IP2Location, 2026
 License     : MIT
 Maintainer  : sales@ip2location.com
 Stability   : experimental
