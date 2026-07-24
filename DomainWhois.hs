@@ -31,12 +31,14 @@ import Network.URI (parseURI, uriAuthority, uriRegName)
 import Data.Text (Text, pack, unpack, replace, splitOn, drop, findIndex, reverse)
 import qualified Data.Text as T
 
+-- | Information about the domain registrar.
 data Registrar = Registrar
   { iana_id :: String
   , name :: String
   , url :: String
   } deriving (Show, Generic)
 
+-- | Contact information associated with a domain registration.
 data Contact = Contact
   { name :: String
   , organization :: String
@@ -50,6 +52,7 @@ data Contact = Contact
   , email :: String
   } deriving (Show, Generic)
 
+-- | Successful response returned by the WHOIS API.
 data ResponseObj = ResponseObj
   { domain :: String
   , domain_id :: String
