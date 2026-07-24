@@ -10,7 +10,7 @@ name:                ip2location-io
 -- PVP summary:      +-+------- breaking API changes
 --                   | | +----- non-breaking API additions
 --                   | | | +--- code changes with no API change
-version:             1.5.0
+version:             1.5.1
 
 -- A short (one-line) description of the package.
 synopsis:            IP2Location.io Haskell package for IP geolocation and domain WHOIS.
@@ -60,7 +60,7 @@ library
   -- other-extensions:    
   
   -- Other library packages from which modules are imported.
-  build-depends:       base >=4.9 && <=4.21, bytestring >=0.10 && <0.13, aeson >=1.5 && <2.3, http-types >=0.12 && <0.13, http-client >=0.6 && <0.8, http-client-tls >=0.3 && <0.4, uri-encode >=1.5 && <1.6, split <=0.2.5, text, network-uri
+  build-depends:       base >=4.9 && <4.23, bytestring >=0.10 && <0.13, aeson >=1.5 && <2.4, http-types >=0.12 && <0.13, http-client >=0.6 && <0.8, http-client-tls >=0.3 && <0.5, uri-encode >=1.5 && <1.6, split <=0.2.5, text, network-uri
   
   -- Directories containing source files.
   -- hs-source-dirs:      

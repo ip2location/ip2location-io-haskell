@@ -28,4 +28,4 @@ data Config = Config {
 -}
 open :: String -> IO Config
 open apikey = do
-    return (Config apikey "sdk-haskell-iplio" "1.5.0")
+    return (Config apikey "sdk-haskell-iplio" "1.5.1")
