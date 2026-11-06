@@ -1,6 +1,6 @@
 # IP2Location.io Haskell SDK — IP Geolocation, Domain WHOIS & Hosted Domain Lookup
 
-**IP2Location.io Haskell SDK** (`ip2location-io`) is a Haskell library for retrieving **IPv4 and IPv6 geolocation, network, and IP intelligence data** through the [IP2Location.io API](https://www.ip2location.io/). It also provides **domain WHOIS lookup**, domain/URL helpers, and a documented **hosted-domain lookup** example. The library lets Haskell applications access IP and domain information without manually constructing API requests.
+**IP2Location.io Haskell SDK** (`ip2location-io`) is a Haskell library for retrieving **IPv4 and IPv6 geolocation, network, and IP intelligence data** through the [IP2Location.io API](https://www.ip2location.io/). It also provides **domain WHOIS lookup**, domain/URL helpers, and **hosted-domain lookup**. The library lets Haskell applications access IP and domain information without manually constructing API requests.
 
 **Quick links:** [Get an API key](https://www.ip2location.io/pricing) · [Developer documentation](https://ip2location-io-haskell.readthedocs.io/en/latest/index.html) · [API reference](https://ip2location-io-haskell.readthedocs.io/en/latest/code.html) · [GitHub repository](https://github.com/ip2location/ip2location-io-haskell)
 
@@ -13,7 +13,7 @@
 - **Additional IP intelligence:** Retrieve available mobile carrier data (MCC/MNC), country metadata, advertising categories, and other attributes.
 - **Domain WHOIS lookup:** Access domain registration dates, registrar details, nameservers, status, and available contacts.
 - **Domain and URL utilities:** Extract domain names from URLs and get domain extensions.
-- **Hosted domains:** The repository and Read the Docs include a hosted-domain API example with paginated results; see the package-availability note below.
+- **Hosted domains:** Retrieves a page of hosted-domain results for an IP address.
 
 > **Plan availability:** Fields vary by subscription plan and queried address. Optional values can be absent even when a field is supported. See [API plans](https://www.ip2location.io/pricing) and the [Haskell API reference](https://ip2location-io-haskell.readthedocs.io/en/latest/code.html).
 
@@ -29,8 +29,6 @@ The [official Haskell API reference](https://ip2location-io-haskell.readthedocs.
 | `DomainWhois.getDomainName url` | Extracts the domain name from a URL. |
 | `DomainWhois.getDomainExtension value` | Retrieves the domain extension from a domain or URL. |
 | `HostedDomain.lookUpHosted config ip page` | Retrieves a page of hosted-domain results for an IP address. |
-
-**Module availability note:** As checked in the [GitHub `.cabal` manifest](https://github.com/ip2location/ip2location-io-haskell/blob/main/ip2location-io.cabal), the library's `exposed-modules` list includes `IPGeolocation`, `DomainWhois`, and `Configuration`, but not `HostedDomain`, even though the [documentation](https://ip2location-io-haskell.readthedocs.io/en/latest/quickstart.html) and repository contain `HostedDomain.hs`. Consequently, the hosted-domain import shown below may not be available from the published package as configured. Verify the installed version or consult the repository before using that example.
 
 ## API access and query limits
 
@@ -232,12 +230,11 @@ case result of
         putStrLn $ "Domains: " ++ show (HD.domains response)
 ```
 
-Use page `2`, `3`, and so on for additional pages when available. **Packaging caveat:** The current repository `.cabal` file does not expose `HostedDomain` even though the source and documentation include it. Check module availability in your installed version before relying on this snippet.
+Use page `2`, `3`, and so on for additional pages when available.
 
 ## Haskell package and module troubleshooting
 
 - **Module cannot be found:** Make sure `ip2location-io` is a declared dependency of the executable you are building. A system-level `cabal install` alone may not make a library import available to every project.
-- **`HostedDomain` cannot be imported:** The published manifest's `exposed-modules` entry omits `HostedDomain`. Check the repository and package version; this is a packaging/documentation discrepancy, not an API-key issue.
 - **Missing optional values:** The SDK documentation uses `Maybe` for fields such as `isp` and `proxy`. Handle `Nothing` rather than assuming every plan returns every field.
 - **API errors:** Handle the `IPError`, `WhoisError`, and `HostedError` constructors shown in the official examples, and check your API key, quota, and requested service.
 
@@ -247,7 +244,7 @@ Use page `2`, `3`, and so on for additional pages when available. **Packaging ca
 - **Network and traffic analysis:** Attach country, ASN, and available ISP attributes to server/application events.
 - **Security review:** Use eligible proxy, VPN, Tor, and fraud indicators as part of broader risk assessment.
 - **Domain research:** Review WHOIS registration dates, registrars, domain status, and nameservers.
-- **Hosting research:** Investigate domains associated with an IP address where the hosted-domain module is available.
+- **Hosting research:** Investigate domains associated with an IP address.
 
 ## Documentation and support
 

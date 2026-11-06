@@ -1,5 +1,9 @@
 # Revision history for ip2location.io
 
+## 1.5.2  -- 2026-11-06
+
+* Fixed unexported module.
+
 ## 1.5.1  -- 2026-07-24
 
 * Updated dependencies.

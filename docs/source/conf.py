@@ -9,8 +9,8 @@ project = 'IP2Location.io Haskell SDK'
 copyright = '2026, IP2Location'
 author = 'IP2Location'
 
-release = '1.5.1'
-version = '1.5.1'
+release = '1.5.2'
+version = '1.5.2'
 
 # -- General configuration
 

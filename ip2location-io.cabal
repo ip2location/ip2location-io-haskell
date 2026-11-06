@@ -10,7 +10,7 @@ name:                ip2location-io
 -- PVP summary:      +-+------- breaking API changes
 --                   | | +----- non-breaking API additions
 --                   | | | +--- code changes with no API change
-version:             1.5.1
+version:             1.5.2
 
 -- A short (one-line) description of the package.
 synopsis:            IP2Location.io Haskell package for IP geolocation and domain WHOIS.
@@ -51,7 +51,7 @@ cabal-version:       >=1.10
 
 library
   -- Modules exported by the library.
-  exposed-modules:     IPGeolocation, DomainWhois, Configuration
+  exposed-modules:     IPGeolocation, DomainWhois, HostedDomain, Configuration
   
   -- Modules included in this library but not exported.
   -- other-modules:       
@@ -60,8 +60,8 @@ library
   -- other-extensions:    
   
   -- Other library packages from which modules are imported.
-  build-depends:       base >=4.9 && <4.23, bytestring >=0.10 && <0.13, aeson >=1.5 && <2.4, http-types >=0.12 && <0.13, http-client >=0.6 && <0.8, http-client-tls >=0.3 && <0.5, uri-encode >=1.5 && <1.6, split <=0.2.5, text, network-uri
-  
+  build-depends:       base >=4.9 && <4.23, bytestring >=0.10 && <0.13, aeson >=1.5 && <2.4, http-types >=0.12 && <0.13, http-client >=0.6 && <0.8, http-client-tls >=0.3 && <0.5, uri-encode >=1.5 && <1.6, split >=0.2.3 && <0.3, text >=1.2 && <2.2, network-uri >=2.6 && <2.7
+
   -- Directories containing source files.
   -- hs-source-dirs:      
   

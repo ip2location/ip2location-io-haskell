@@ -19,6 +19,8 @@ import Data.Aeson as DA
 import Data.Aeson.Types (Result(..), Parser)
 import Network.HTTP.Client
 import Network.HTTP.Client.TLS (tlsManagerSettings)
+import Network.HTTP.Types.Header (hUserAgent)
+import qualified Data.ByteString.Char8 as BS
 import Network.HTTP.Types.Status (statusCode)
 import Network.URI.Encode as URIE
 import Configuration
@@ -73,8 +75,16 @@ lookUpHosted myconfig ip page = do
 
     let url = "https://domains.ip2whois.com/domains?key=" ++ (URIE.encode myKey) ++ "&source=" ++ mySource ++ "&source-version=" ++ myVersion ++ "&format=" ++ format ++ "&ip=" ++ (URIE.encode ip) ++ "&page=" ++ show page
     manager <- newManager tlsManagerSettings
-    httprequest <- parseRequest $ url
-    httpresponse <- httpLbs httprequest manager
+
+    httprequest <- parseRequest url
+
+    let request = httprequest {
+        requestHeaders =
+            [(hUserAgent, BS.pack (mySource ++ "/" ++ myVersion))]
+    }
+
+    httpresponse <- httpLbs request manager
+
     let json = responseBody httpresponse
 
     case eitherDecode json of
