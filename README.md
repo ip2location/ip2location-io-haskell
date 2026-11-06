@@ -1,4 +1,5 @@
 # IP2Location.io Haskell SDK — IP Geolocation, Domain WHOIS & Hosted Domain Lookup
+![Hackage Version](https://img.shields.io/hackage/v/ip2location-io)
 
 **IP2Location.io Haskell SDK** (`ip2location-io`) is a Haskell library for retrieving **IPv4 and IPv6 geolocation, network, and IP intelligence data** through the [IP2Location.io API](https://www.ip2location.io/). It also provides **domain WHOIS lookup**, domain/URL helpers, and **hosted-domain lookup**. The library lets Haskell applications access IP and domain information without manually constructing API requests.
 
